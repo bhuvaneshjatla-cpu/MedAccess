@@ -1,0 +1,2321 @@
+{
+    "_type": "Project",
+    "_id": "MEDACCESS-PROJECT",
+    "name": "MedAccess",
+    "documentation": "MedAccess - State Diagram Model (STD-01 .. STD-06).\nMedAccess is a pharmacist-supervised medicine information and availability assistant. It is not an online pharmacy, a diagnostic system, a prescribing system, a medicine-delivery service, an autonomous substitution system or a payment/purchasing system.\nNo state diagrams are modelled for Price, Medicine, Role, AuditLogEntry, Pharmacy or VerificationComment - the SRS does not establish meaningful lifecycle states for them.",
+    "ownedElements": [
+        {
+            "_type": "UMLModel",
+            "_id": "MEDACCESS-MODEL",
+            "_parent": {
+                "$ref": "MEDACCESS-PROJECT"
+            },
+            "name": "MedAccess State Machines",
+            "documentation": "Recommended state diagram set for the MedAccess MVP:\nSTD-01 User Account (User)\nSTD-02 Potential Medicine Match (PotentialMedicineMatch)\nSTD-03 Medicine Comparison (MedicineComparison)\nSTD-04 Incorrect Information Report (IncorrectInformationReport)\nSTD-05 Refill Reminder (RefillReminder)\nSTD-06 Pharmacy Availability (PharmacyAvailability)",
+            "ownedElements": [
+                {
+                    "_type": "UMLStateMachine",
+                    "_id": "STD01",
+                    "_parent": {
+                        "$ref": "MEDACCESS-MODEL"
+                    },
+                    "name": "STD-01 User Account State",
+                    "documentation": "Object: User\nPurpose: Model the lifecycle/status of a MedAccess user account.\nRelated Requirements: FR-01-FR-04, FR-35, NFR-01-NFR-03, FR-38-FR-39.\nTraceability: AD-01 Authenticate User / AD-08 User & Role Management; SD-01, SD-08.\nRule: Account status and role are different concepts. Roles (Patient, Caregiver, Pharmacist, Pharmacy Staff, Doctor/Healthcare Professional, Administrator) are NOT modelled as states.\nNote: A 'Suspended' state is deliberately omitted - requirements do not explicitly establish suspension.\nNote: No final state is used - the lifecycle does not genuinely terminate in the SRS.",
+                    "ownedElements": [
+                        {
+                            "_type": "UMLStatechartDiagram",
+                            "_id": "STD01-DGM",
+                            "_parent": {
+                                "$ref": "STD01"
+                            },
+                            "name": "STD-01 User Account State",
+                            "defaultDiagram": true,
+                            "ownedViews": [
+                                {
+                                    "_type": "UMLPseudostateView",
+                                    "_id": "STD01-INIT-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-INIT"
+                                    },
+                                    "left": 360,
+                                    "top": 60,
+                                    "width": 20,
+                                    "height": 20,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD01-CREATED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-CREATED"
+                                    },
+                                    "left": 300,
+                                    "top": 130,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD01-ACTIVE-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-ACTIVE"
+                                    },
+                                    "left": 300,
+                                    "top": 250,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD01-DEACTIVATED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-DEACTIVATED"
+                                    },
+                                    "left": 110,
+                                    "top": 400,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD01-INACTIVE-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-INACTIVE"
+                                    },
+                                    "left": 500,
+                                    "top": 400,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD01-T1-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-T1"
+                                    },
+                                    "head": {
+                                        "$ref": "STD01-CREATED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD01-INIT-VIEW"
+                                    },
+                                    "points": "370:80;370:130"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD01-T2-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-T2"
+                                    },
+                                    "head": {
+                                        "$ref": "STD01-ACTIVE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD01-CREATED-VIEW"
+                                    },
+                                    "points": "370:180;370:250"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD01-T3-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-T3"
+                                    },
+                                    "head": {
+                                        "$ref": "STD01-DEACTIVATED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD01-ACTIVE-VIEW"
+                                    },
+                                    "points": "339:300;216:400"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD01-T4-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-T4"
+                                    },
+                                    "head": {
+                                        "$ref": "STD01-INACTIVE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD01-ACTIVE-VIEW"
+                                    },
+                                    "points": "404:300;541:400"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD01-T5-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD01-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD01-T5"
+                                    },
+                                    "head": {
+                                        "$ref": "STD01-ACTIVE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD01-INACTIVE-VIEW"
+                                    },
+                                    "points": "650:415;720:415;720:275;440:275"
+                                }
+                            ]
+                        }
+                    ],
+                    "regions": [
+                        {
+                            "_type": "UMLRegion",
+                            "_id": "STD01-REGION",
+                            "_parent": {
+                                "$ref": "STD01"
+                            },
+                            "vertices": [
+                                {
+                                    "_type": "UMLPseudostate",
+                                    "_id": "STD01-INIT",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "name": "",
+                                    "kind": "initial"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD01-CREATED",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "name": "Created",
+                                    "documentation": "The account exists but has not yet been activated for normal use."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD01-ACTIVE",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "name": "Active",
+                                    "documentation": "The account can authenticate and access functions permitted by its role."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD01-DEACTIVATED",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "name": "Deactivated",
+                                    "documentation": "The account is no longer active for normal system use."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD01-INACTIVE",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "name": "Inactive",
+                                    "documentation": "The account exists but normal access is not currently enabled."
+                                }
+                            ],
+                            "transitions": [
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD01-T1",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD01-INIT"
+                                    },
+                                    "target": {
+                                        "$ref": "STD01-CREATED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD01-T1-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD01-T1"
+                                            },
+                                            "name": "createAccount"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD01-T2",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD01-CREATED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD01-ACTIVE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD01-T2-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD01-T2"
+                                            },
+                                            "name": "activate"
+                                        }
+                                    ],
+                                    "guard": "authorized administrator"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD01-T3",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD01-ACTIVE"
+                                    },
+                                    "target": {
+                                        "$ref": "STD01-DEACTIVATED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD01-T3-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD01-T3"
+                                            },
+                                            "name": "deactivate"
+                                        }
+                                    ],
+                                    "guard": "authorized administrator"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD01-T4",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD01-ACTIVE"
+                                    },
+                                    "target": {
+                                        "$ref": "STD01-INACTIVE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD01-T4-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD01-T4"
+                                            },
+                                            "name": "inactivate"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD01-T5",
+                                    "_parent": {
+                                        "$ref": "STD01-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD01-INACTIVE"
+                                    },
+                                    "target": {
+                                        "$ref": "STD01-ACTIVE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD01-T5-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD01-T5"
+                                            },
+                                            "name": "reactivate"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "_type": "UMLStateMachine",
+                    "_id": "STD02",
+                    "_parent": {
+                        "$ref": "MEDACCESS-MODEL"
+                    },
+                    "name": "STD-02 Potential Medicine Match State",
+                    "documentation": "Object: PotentialMedicineMatch\nPurpose: Model the lifecycle of a system-generated potential medicine match.\nRelated Requirements: FR-20-FR-27, BR-01, BR-02, BR-03.\nTraceability: AD-03 Medicine Matching & Pharmacist Verification; SD-03.\nCRITICAL SAFETY RULE: there is no autonomous transition Potential Match -> Pharmacist-Verified. Verification and rejection are explicit authorized pharmacist actions. The system must not autonomously approve a medicine substitution.",
+                    "ownedElements": [
+                        {
+                            "_type": "UMLStatechartDiagram",
+                            "_id": "STD02-DGM",
+                            "_parent": {
+                                "$ref": "STD02"
+                            },
+                            "name": "STD-02 Potential Medicine Match State",
+                            "defaultDiagram": false,
+                            "ownedViews": [
+                                {
+                                    "_type": "UMLPseudostateView",
+                                    "_id": "STD02-INIT-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-INIT"
+                                    },
+                                    "left": 400,
+                                    "top": 50,
+                                    "width": 20,
+                                    "height": 20,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD02-POTENTIAL-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-POTENTIAL"
+                                    },
+                                    "left": 320,
+                                    "top": 120,
+                                    "width": 180,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD02-PENDING-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-PENDING"
+                                    },
+                                    "left": 300,
+                                    "top": 240,
+                                    "width": 220,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD02-VERIFIED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-VERIFIED"
+                                    },
+                                    "left": 110,
+                                    "top": 390,
+                                    "width": 180,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD02-REJECTED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-REJECTED"
+                                    },
+                                    "left": 540,
+                                    "top": 390,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD02-T1-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-T1"
+                                    },
+                                    "head": {
+                                        "$ref": "STD02-POTENTIAL-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD02-INIT-VIEW"
+                                    },
+                                    "points": "410:70;410:120"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD02-T2-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-T2"
+                                    },
+                                    "head": {
+                                        "$ref": "STD02-PENDING-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD02-POTENTIAL-VIEW"
+                                    },
+                                    "points": "410:170;410:240"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD02-T3-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-T3"
+                                    },
+                                    "head": {
+                                        "$ref": "STD02-VERIFIED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD02-PENDING-VIEW"
+                                    },
+                                    "points": "375:290;235:390"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD02-T4-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD02-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD02-T4"
+                                    },
+                                    "head": {
+                                        "$ref": "STD02-REJECTED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD02-PENDING-VIEW"
+                                    },
+                                    "points": "444:290;581:390"
+                                }
+                            ]
+                        }
+                    ],
+                    "regions": [
+                        {
+                            "_type": "UMLRegion",
+                            "_id": "STD02-REGION",
+                            "_parent": {
+                                "$ref": "STD02"
+                            },
+                            "vertices": [
+                                {
+                                    "_type": "UMLPseudostate",
+                                    "_id": "STD02-INIT",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "name": "",
+                                    "kind": "initial"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD02-POTENTIAL",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "name": "Potential Match",
+                                    "documentation": "The system has identified a product as potentially matching based on structured medicine attributes."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD02-PENDING",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "name": "Pending Pharmacist Review",
+                                    "documentation": "The potential comparison is awaiting authorized pharmacist review."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD02-VERIFIED",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "name": "Pharmacist-Verified",
+                                    "documentation": "An authorized pharmacist has explicitly verified the comparison."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD02-REJECTED",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "name": "Rejected",
+                                    "documentation": "An authorized pharmacist has rejected the potential comparison."
+                                }
+                            ],
+                            "transitions": [
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD02-T1",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD02-INIT"
+                                    },
+                                    "target": {
+                                        "$ref": "STD02-POTENTIAL"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD02-T1-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD02-T1"
+                                            },
+                                            "name": "identifyPotentialMatch"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD02-T2",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD02-POTENTIAL"
+                                    },
+                                    "target": {
+                                        "$ref": "STD02-PENDING"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD02-T2-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD02-T2"
+                                            },
+                                            "name": "submitForReview"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD02-T3",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD02-PENDING"
+                                    },
+                                    "target": {
+                                        "$ref": "STD02-VERIFIED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD02-T3-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD02-T3"
+                                            },
+                                            "name": "verify"
+                                        }
+                                    ],
+                                    "guard": "authorized pharmacist"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD02-T4",
+                                    "_parent": {
+                                        "$ref": "STD02-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD02-PENDING"
+                                    },
+                                    "target": {
+                                        "$ref": "STD02-REJECTED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD02-T4-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD02-T4"
+                                            },
+                                            "name": "reject"
+                                        }
+                                    ],
+                                    "guard": "authorized pharmacist"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "_type": "UMLStateMachine",
+                    "_id": "STD03",
+                    "_parent": {
+                        "$ref": "MEDACCESS-MODEL"
+                    },
+                    "name": "STD-03 Medicine Comparison State",
+                    "documentation": "Object: MedicineComparison\nPurpose: Model the lifecycle of a medicine comparison as it moves through review and verification.\nRelated Requirements: FR-21-FR-27, BR-01-BR-04.\nTraceability: AD-03 Medicine Matching & Pharmacist Verification; SD-03.\nNote: a pharmacist review comment is optional review information, not a lifecycle state - no 'Comment Added' state is modelled.\nNote: a Potential Match (STD-02) and a Pharmacist-Verified Comparison are distinct concepts and are not collapsed.",
+                    "ownedElements": [
+                        {
+                            "_type": "UMLStatechartDiagram",
+                            "_id": "STD03-DGM",
+                            "_parent": {
+                                "$ref": "STD03"
+                            },
+                            "name": "STD-03 Medicine Comparison State",
+                            "defaultDiagram": false,
+                            "ownedViews": [
+                                {
+                                    "_type": "UMLPseudostateView",
+                                    "_id": "STD03-INIT-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-INIT"
+                                    },
+                                    "left": 400,
+                                    "top": 40,
+                                    "width": 20,
+                                    "height": 20,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD03-CREATED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-CREATED"
+                                    },
+                                    "left": 340,
+                                    "top": 110,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD03-PENDING-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-PENDING"
+                                    },
+                                    "left": 340,
+                                    "top": 210,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD03-UNDERREVIEW-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-UNDERREVIEW"
+                                    },
+                                    "left": 320,
+                                    "top": 310,
+                                    "width": 200,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD03-VERIFIED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-VERIFIED"
+                                    },
+                                    "left": 120,
+                                    "top": 450,
+                                    "width": 150,
+                                    "height": 60,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD03-REJECTED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-REJECTED"
+                                    },
+                                    "left": 550,
+                                    "top": 450,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD03-T1-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-T1"
+                                    },
+                                    "head": {
+                                        "$ref": "STD03-CREATED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD03-INIT-VIEW"
+                                    },
+                                    "points": "410:60;410:110"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD03-T2-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-T2"
+                                    },
+                                    "head": {
+                                        "$ref": "STD03-PENDING-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD03-CREATED-VIEW"
+                                    },
+                                    "points": "410:160;410:210"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD03-T3-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-T3"
+                                    },
+                                    "head": {
+                                        "$ref": "STD03-UNDERREVIEW-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD03-PENDING-VIEW"
+                                    },
+                                    "points": "412:260;418:310"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD03-T4-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-T4"
+                                    },
+                                    "head": {
+                                        "$ref": "STD03-VERIFIED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD03-UNDERREVIEW-VIEW"
+                                    },
+                                    "points": "381:360;242:450"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD03-T5-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD03-T5"
+                                    },
+                                    "head": {
+                                        "$ref": "STD03-REJECTED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD03-UNDERREVIEW-VIEW"
+                                    },
+                                    "points": "457:360;588:450"
+                                }
+                            ]
+                        }
+                    ],
+                    "regions": [
+                        {
+                            "_type": "UMLRegion",
+                            "_id": "STD03-REGION",
+                            "_parent": {
+                                "$ref": "STD03"
+                            },
+                            "vertices": [
+                                {
+                                    "_type": "UMLPseudostate",
+                                    "_id": "STD03-INIT",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "name": "",
+                                    "kind": "initial"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD03-CREATED",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "name": "Created",
+                                    "documentation": "A comparison record exists."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD03-PENDING",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "name": "Pending Review",
+                                    "documentation": "The comparison is waiting for pharmacist review."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD03-UNDERREVIEW",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "name": "Under Pharmacist Review",
+                                    "documentation": "An authorized pharmacist is actively reviewing the comparison."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD03-VERIFIED",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "name": "Verified",
+                                    "documentation": "The pharmacist has explicitly verified the comparison.\nEntry action: recordVerification"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD03-REJECTED",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "name": "Rejected",
+                                    "documentation": "The pharmacist has explicitly rejected the comparison."
+                                }
+                            ],
+                            "transitions": [
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD03-T1",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD03-INIT"
+                                    },
+                                    "target": {
+                                        "$ref": "STD03-CREATED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD03-T1-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD03-T1"
+                                            },
+                                            "name": "createComparison"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD03-T2",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD03-CREATED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD03-PENDING"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD03-T2-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD03-T2"
+                                            },
+                                            "name": "submitForReview"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD03-T3",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD03-PENDING"
+                                    },
+                                    "target": {
+                                        "$ref": "STD03-UNDERREVIEW"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD03-T3-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD03-T3"
+                                            },
+                                            "name": "pharmacistOpensReview"
+                                        }
+                                    ],
+                                    "guard": "authorized pharmacist"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD03-T4",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD03-UNDERREVIEW"
+                                    },
+                                    "target": {
+                                        "$ref": "STD03-VERIFIED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD03-T4-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD03-T4"
+                                            },
+                                            "name": "verify"
+                                        }
+                                    ],
+                                    "guard": "authorized pharmacist"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD03-T5",
+                                    "_parent": {
+                                        "$ref": "STD03-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD03-UNDERREVIEW"
+                                    },
+                                    "target": {
+                                        "$ref": "STD03-REJECTED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD03-T5-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD03-T5"
+                                            },
+                                            "name": "reject"
+                                        }
+                                    ],
+                                    "guard": "authorized pharmacist"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "_type": "UMLStateMachine",
+                    "_id": "STD04",
+                    "_parent": {
+                        "$ref": "MEDACCESS-MODEL"
+                    },
+                    "name": "STD-04 Incorrect Information Report State",
+                    "documentation": "Object: IncorrectInformationReport\nPurpose: Model the lifecycle of a report concerning potentially incorrect medicine price or availability information.\nRelated Requirements: FR-28-FR-31, FR-38-FR-39.\nTraceability: AD-06 Report & Resolve Incorrect Information; SD-06.\nCRITICAL RULE: a submitted report never causes an automatic stock/price change. The flow is submission -> authorized review -> investigation -> resolution -> audit record. The report workflow is separate from the underlying stock/price update workflow.\nNote: 'Investigating' may be omitted if the Activity Diagram does not distinguish investigation from review.",
+                    "ownedElements": [
+                        {
+                            "_type": "UMLStatechartDiagram",
+                            "_id": "STD04-DGM",
+                            "_parent": {
+                                "$ref": "STD04"
+                            },
+                            "name": "STD-04 Incorrect Information Report State",
+                            "defaultDiagram": false,
+                            "ownedViews": [
+                                {
+                                    "_type": "UMLPseudostateView",
+                                    "_id": "STD04-INIT-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-INIT"
+                                    },
+                                    "left": 400,
+                                    "top": 40,
+                                    "width": 20,
+                                    "height": 20,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD04-SUBMITTED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-SUBMITTED"
+                                    },
+                                    "left": 340,
+                                    "top": 110,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD04-UNDERREVIEW-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-UNDERREVIEW"
+                                    },
+                                    "left": 340,
+                                    "top": 210,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD04-INVESTIGATING-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-INVESTIGATING"
+                                    },
+                                    "left": 340,
+                                    "top": 310,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD04-RESOLVED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-RESOLVED"
+                                    },
+                                    "left": 120,
+                                    "top": 450,
+                                    "width": 160,
+                                    "height": 60,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD04-REJECTED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-REJECTED"
+                                    },
+                                    "left": 550,
+                                    "top": 450,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD04-T1-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-T1"
+                                    },
+                                    "head": {
+                                        "$ref": "STD04-SUBMITTED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD04-INIT-VIEW"
+                                    },
+                                    "points": "410:60;410:110"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD04-T2-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-T2"
+                                    },
+                                    "head": {
+                                        "$ref": "STD04-UNDERREVIEW-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD04-SUBMITTED-VIEW"
+                                    },
+                                    "points": "410:160;410:210"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD04-T3-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-T3"
+                                    },
+                                    "head": {
+                                        "$ref": "STD04-INVESTIGATING-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD04-UNDERREVIEW-VIEW"
+                                    },
+                                    "points": "410:260;410:310"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD04-T4-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-T4"
+                                    },
+                                    "head": {
+                                        "$ref": "STD04-RESOLVED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD04-INVESTIGATING-VIEW"
+                                    },
+                                    "points": "374:360;243:450"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD04-T5-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD04-T5"
+                                    },
+                                    "head": {
+                                        "$ref": "STD04-REJECTED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD04-INVESTIGATING-VIEW"
+                                    },
+                                    "points": "448:360;587:450"
+                                }
+                            ]
+                        }
+                    ],
+                    "regions": [
+                        {
+                            "_type": "UMLRegion",
+                            "_id": "STD04-REGION",
+                            "_parent": {
+                                "$ref": "STD04"
+                            },
+                            "vertices": [
+                                {
+                                    "_type": "UMLPseudostate",
+                                    "_id": "STD04-INIT",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "name": "",
+                                    "kind": "initial"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD04-SUBMITTED",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "name": "Submitted",
+                                    "documentation": "A user has created the report. The report identifies the relevant medicine, the relevant pharmacy, the issue type, the report timestamp and a comment where supported."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD04-UNDERREVIEW",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "name": "Under Review",
+                                    "documentation": "An authorized user is reviewing the report."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD04-INVESTIGATING",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "name": "Investigating",
+                                    "documentation": "The reviewer is examining the reported information."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD04-RESOLVED",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "name": "Resolved",
+                                    "documentation": "The authorized review process has reached a resolution. The resolution action must be auditable.\nEntry action: createAuditEntry"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD04-REJECTED",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "name": "Rejected",
+                                    "documentation": "The report has been reviewed and rejected."
+                                }
+                            ],
+                            "transitions": [
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD04-T1",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD04-INIT"
+                                    },
+                                    "target": {
+                                        "$ref": "STD04-SUBMITTED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD04-T1-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD04-T1"
+                                            },
+                                            "name": "submitReport"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD04-T2",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD04-SUBMITTED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD04-UNDERREVIEW"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD04-T2-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD04-T2"
+                                            },
+                                            "name": "reviewReport"
+                                        }
+                                    ],
+                                    "guard": "authorized reviewer"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD04-T3",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD04-UNDERREVIEW"
+                                    },
+                                    "target": {
+                                        "$ref": "STD04-INVESTIGATING"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD04-T3-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD04-T3"
+                                            },
+                                            "name": "beginInvestigation"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD04-T4",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD04-INVESTIGATING"
+                                    },
+                                    "target": {
+                                        "$ref": "STD04-RESOLVED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD04-T4-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD04-T4"
+                                            },
+                                            "name": "resolve"
+                                        }
+                                    ],
+                                    "guard": "authorized reviewer"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD04-T5",
+                                    "_parent": {
+                                        "$ref": "STD04-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD04-INVESTIGATING"
+                                    },
+                                    "target": {
+                                        "$ref": "STD04-REJECTED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD04-T5-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD04-T5"
+                                            },
+                                            "name": "reject"
+                                        }
+                                    ],
+                                    "guard": "authorized reviewer"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "_type": "UMLStateMachine",
+                    "_id": "STD05",
+                    "_parent": {
+                        "$ref": "MEDACCESS-MODEL"
+                    },
+                    "name": "STD-05 Refill Reminder State",
+                    "documentation": "Object: RefillReminder\nPurpose: Model the lifecycle of a user's medicine refill reminder.\nRelated Requirements: FR-32, FR-33, FR-34.\nTraceability: AD-07 Refill Reminders; SD-07.\nRecurrence is modelled as configuration on the existing lifecycle (Scheduled -> Triggered -> reschedule -> Scheduled), not as a separate state machine. If recurrence is not implemented in the MVP it remains an optional extension.\nBoundary: a refill reminder is a convenience function - no dosage modification, treatment advice, prescription change, diagnosis or autonomous medical recommendation is modelled.",
+                    "ownedElements": [
+                        {
+                            "_type": "UMLStatechartDiagram",
+                            "_id": "STD05-DGM",
+                            "_parent": {
+                                "$ref": "STD05"
+                            },
+                            "name": "STD-05 Refill Reminder State",
+                            "defaultDiagram": false,
+                            "ownedViews": [
+                                {
+                                    "_type": "UMLPseudostateView",
+                                    "_id": "STD05-INIT-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-INIT"
+                                    },
+                                    "left": 350,
+                                    "top": 40,
+                                    "width": 20,
+                                    "height": 20,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD05-CREATED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-CREATED"
+                                    },
+                                    "left": 290,
+                                    "top": 110,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD05-SCHEDULED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-SCHEDULED"
+                                    },
+                                    "left": 290,
+                                    "top": 230,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD05-TRIGGERED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-TRIGGERED"
+                                    },
+                                    "left": 290,
+                                    "top": 370,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD05-COMPLETED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-COMPLETED"
+                                    },
+                                    "left": 290,
+                                    "top": 500,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD05-CANCELLED-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-CANCELLED"
+                                    },
+                                    "left": 560,
+                                    "top": 230,
+                                    "width": 140,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD05-T1-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-T1"
+                                    },
+                                    "head": {
+                                        "$ref": "STD05-CREATED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD05-INIT-VIEW"
+                                    },
+                                    "points": "360:60;360:110"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD05-T2-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-T2"
+                                    },
+                                    "head": {
+                                        "$ref": "STD05-SCHEDULED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD05-CREATED-VIEW"
+                                    },
+                                    "points": "360:160;360:230"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD05-T3-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-T3"
+                                    },
+                                    "head": {
+                                        "$ref": "STD05-TRIGGERED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD05-SCHEDULED-VIEW"
+                                    },
+                                    "points": "360:280;360:370"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD05-T4-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-T4"
+                                    },
+                                    "head": {
+                                        "$ref": "STD05-CANCELLED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD05-SCHEDULED-VIEW"
+                                    },
+                                    "points": "430:255;560:255"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD05-T5-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-T5"
+                                    },
+                                    "head": {
+                                        "$ref": "STD05-COMPLETED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD05-TRIGGERED-VIEW"
+                                    },
+                                    "points": "360:420;360:500"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD05-T6-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD05-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD05-T6"
+                                    },
+                                    "head": {
+                                        "$ref": "STD05-SCHEDULED-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD05-TRIGGERED-VIEW"
+                                    },
+                                    "points": "290:395;190:395;190:255;290:255"
+                                }
+                            ]
+                        }
+                    ],
+                    "regions": [
+                        {
+                            "_type": "UMLRegion",
+                            "_id": "STD05-REGION",
+                            "_parent": {
+                                "$ref": "STD05"
+                            },
+                            "vertices": [
+                                {
+                                    "_type": "UMLPseudostate",
+                                    "_id": "STD05-INIT",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "name": "",
+                                    "kind": "initial"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD05-CREATED",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "name": "Created",
+                                    "documentation": "The reminder exists and contains the user, medicine and reminder date/time."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD05-SCHEDULED",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "name": "Scheduled",
+                                    "documentation": "The reminder has been retained with its intended reminder date/time."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD05-TRIGGERED",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "name": "Triggered",
+                                    "documentation": "The reminder date/time has been reached and the reminder event has occurred. Use this state only if the prototype actually models a triggering event."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD05-COMPLETED",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "name": "Completed",
+                                    "documentation": "The reminder cycle has been completed."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD05-CANCELLED",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "name": "Cancelled",
+                                    "documentation": "The reminder has been cancelled/deactivated."
+                                }
+                            ],
+                            "transitions": [
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD05-T1",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD05-INIT"
+                                    },
+                                    "target": {
+                                        "$ref": "STD05-CREATED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD05-T1-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD05-T1"
+                                            },
+                                            "name": "createReminder"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD05-T2",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD05-CREATED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD05-SCHEDULED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD05-T2-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD05-T2"
+                                            },
+                                            "name": "schedule"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD05-T3",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD05-SCHEDULED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD05-TRIGGERED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD05-T3-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD05-T3"
+                                            },
+                                            "name": "trigger"
+                                        }
+                                    ],
+                                    "guard": "reminder date/time reached"
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD05-T4",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD05-SCHEDULED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD05-CANCELLED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD05-T4-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD05-T4"
+                                            },
+                                            "name": "cancel"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD05-T5",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD05-TRIGGERED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD05-COMPLETED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD05-T5-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD05-T5"
+                                            },
+                                            "name": "complete"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD05-T6",
+                                    "_parent": {
+                                        "$ref": "STD05-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD05-TRIGGERED"
+                                    },
+                                    "target": {
+                                        "$ref": "STD05-SCHEDULED"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD05-T6-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD05-T6"
+                                            },
+                                            "name": "reschedule"
+                                        }
+                                    ],
+                                    "guard": "recurring"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "_type": "UMLStateMachine",
+                    "_id": "STD06",
+                    "_parent": {
+                        "$ref": "MEDACCESS-MODEL"
+                    },
+                    "name": "STD-06 Pharmacy Availability State",
+                    "documentation": "Object: PharmacyAvailability\nPurpose: Model the reported availability state of a medicine at a participating pharmacy.\nRelated Requirements: FR-10-FR-14, NFR-13-NFR-14, BR-05.\nTraceability: AD-02 Pharmacy Availability & Price Comparison / AD-04 Update Medicine Stock; SD-02, SD-04.\nThe SRS explicitly defines the states Available, Low Stock and Unavailable. Because pharmacy staff can update availability repeatedly, transitions may occur in either direction rather than as a one-way lifecycle.\nTIMESTAMP RULE: availability state does not itself communicate freshness. The PharmacyAvailability data must also retain/report source and last-updated time (state diagram -> availability status; class/data model -> status + source + timestamp). Availability must not be represented as guaranteed real-time inventory.",
+                    "ownedElements": [
+                        {
+                            "_type": "UMLStatechartDiagram",
+                            "_id": "STD06-DGM",
+                            "_parent": {
+                                "$ref": "STD06"
+                            },
+                            "name": "STD-06 Pharmacy Availability State",
+                            "defaultDiagram": false,
+                            "ownedViews": [
+                                {
+                                    "_type": "UMLPseudostateView",
+                                    "_id": "STD06-INIT-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-INIT"
+                                    },
+                                    "left": 355,
+                                    "top": 40,
+                                    "width": 20,
+                                    "height": 20,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD06-AVAILABLE-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-AVAILABLE"
+                                    },
+                                    "left": 290,
+                                    "top": 120,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD06-LOWSTOCK-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-LOWSTOCK"
+                                    },
+                                    "left": 90,
+                                    "top": 340,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLStateView",
+                                    "_id": "STD06-UNAVAILABLE-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-UNAVAILABLE"
+                                    },
+                                    "left": 500,
+                                    "top": 340,
+                                    "width": 150,
+                                    "height": 50,
+                                    "visible": true
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD06-T1-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-T1"
+                                    },
+                                    "head": {
+                                        "$ref": "STD06-AVAILABLE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD06-INIT-VIEW"
+                                    },
+                                    "points": "365:60;365:120"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD06-T2-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-T2"
+                                    },
+                                    "head": {
+                                        "$ref": "STD06-LOWSTOCK-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD06-AVAILABLE-VIEW"
+                                    },
+                                    "points": "300:170;175:340"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD06-T3-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-T3"
+                                    },
+                                    "head": {
+                                        "$ref": "STD06-AVAILABLE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD06-LOWSTOCK-VIEW"
+                                    },
+                                    "points": "200:340;315:170"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD06-T4-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-T4"
+                                    },
+                                    "head": {
+                                        "$ref": "STD06-UNAVAILABLE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD06-AVAILABLE-VIEW"
+                                    },
+                                    "points": "430:170;555:340"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD06-T5-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-T5"
+                                    },
+                                    "head": {
+                                        "$ref": "STD06-AVAILABLE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD06-UNAVAILABLE-VIEW"
+                                    },
+                                    "points": "530:340;415:170"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD06-T6-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-T6"
+                                    },
+                                    "head": {
+                                        "$ref": "STD06-UNAVAILABLE-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD06-LOWSTOCK-VIEW"
+                                    },
+                                    "points": "240:355;500:355"
+                                },
+                                {
+                                    "_type": "UMLTransitionView",
+                                    "_id": "STD06-T7-VIEW",
+                                    "_parent": {
+                                        "$ref": "STD06-DGM"
+                                    },
+                                    "model": {
+                                        "$ref": "STD06-T7"
+                                    },
+                                    "head": {
+                                        "$ref": "STD06-LOWSTOCK-VIEW"
+                                    },
+                                    "tail": {
+                                        "$ref": "STD06-UNAVAILABLE-VIEW"
+                                    },
+                                    "points": "500:378;240:378"
+                                }
+                            ]
+                        }
+                    ],
+                    "regions": [
+                        {
+                            "_type": "UMLRegion",
+                            "_id": "STD06-REGION",
+                            "_parent": {
+                                "$ref": "STD06"
+                            },
+                            "vertices": [
+                                {
+                                    "_type": "UMLPseudostate",
+                                    "_id": "STD06-INIT",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "name": "",
+                                    "kind": "initial"
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD06-AVAILABLE",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "name": "Available",
+                                    "documentation": "The medicine is reported as available at the participating pharmacy."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD06-LOWSTOCK",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "name": "Low Stock",
+                                    "documentation": "The medicine is reported as being in low stock at the participating pharmacy."
+                                },
+                                {
+                                    "_type": "UMLState",
+                                    "_id": "STD06-UNAVAILABLE",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "name": "Unavailable",
+                                    "documentation": "The medicine is reported as unavailable at the participating pharmacy."
+                                }
+                            ],
+                            "transitions": [
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD06-T1",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD06-INIT"
+                                    },
+                                    "target": {
+                                        "$ref": "STD06-AVAILABLE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD06-T1-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD06-T1"
+                                            },
+                                            "name": "createAvailability"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD06-T2",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD06-AVAILABLE"
+                                    },
+                                    "target": {
+                                        "$ref": "STD06-LOWSTOCK"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD06-T2-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD06-T2"
+                                            },
+                                            "name": "updateAvailability"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD06-T3",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD06-LOWSTOCK"
+                                    },
+                                    "target": {
+                                        "$ref": "STD06-AVAILABLE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD06-T3-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD06-T3"
+                                            },
+                                            "name": "updateAvailability"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD06-T4",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD06-AVAILABLE"
+                                    },
+                                    "target": {
+                                        "$ref": "STD06-UNAVAILABLE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD06-T4-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD06-T4"
+                                            },
+                                            "name": "updateAvailability"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD06-T5",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD06-UNAVAILABLE"
+                                    },
+                                    "target": {
+                                        "$ref": "STD06-AVAILABLE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD06-T5-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD06-T5"
+                                            },
+                                            "name": "updateAvailability"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD06-T6",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD06-LOWSTOCK"
+                                    },
+                                    "target": {
+                                        "$ref": "STD06-UNAVAILABLE"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD06-T6-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD06-T6"
+                                            },
+                                            "name": "updateAvailability"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLTransition",
+                                    "_id": "STD06-T7",
+                                    "_parent": {
+                                        "$ref": "STD06-REGION"
+                                    },
+                                    "source": {
+                                        "$ref": "STD06-UNAVAILABLE"
+                                    },
+                                    "target": {
+                                        "$ref": "STD06-LOWSTOCK"
+                                    },
+                                    "documentation": "",
+                                    "triggers": [
+                                        {
+                                            "_type": "UMLEvent",
+                                            "_id": "STD06-T7-TRIG",
+                                            "_parent": {
+                                                "$ref": "STD06-T7"
+                                            },
+                                            "name": "updateAvailability"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
