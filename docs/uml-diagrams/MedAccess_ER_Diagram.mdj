@@ -1,0 +1,3713 @@
+{
+  "_id": "8330F5D6-A5DA-4CC4-901E-A3D121AD7514",
+  "_type": "Project",
+  "name": "MedAccess ER Diagram (ER-01)",
+  "ownedElements": [
+    {
+      "_id": "E0BBA916-817E-4408-94CE-C94A9456CCA2",
+      "_type": "UMLModel",
+      "_parent": {
+        "$ref": "8330F5D6-A5DA-4CC4-901E-A3D121AD7514"
+      },
+      "name": "MedAccess Data Model",
+      "ownedElements": [
+        {
+          "_id": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "ROLE",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "BBD444DF-E48E-46F5-815B-B1A34B17EED9",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198"
+              },
+              "name": "role_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "F2DAC7A0-A913-472F-8174-091E9E840D93",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198"
+              },
+              "name": "role_name",
+              "visibility": "public",
+              "type": "VARCHAR"
+            }
+          ]
+        },
+        {
+          "_id": "24C943C9-3853-4D2E-BD93-516A85DF85C6",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "USER",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "832BAC7B-6E92-4BC4-8CCD-5AB248EE27CA",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+              },
+              "name": "user_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "AA2B6236-2A09-4E30-914B-DB82537D4533",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+              },
+              "name": "name",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "6DDFB9B1-1E12-4FE7-9AF8-D4BE32F4A04B",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+              },
+              "name": "contact_information",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "7904EC53-36AF-49AC-84D7-C35657E31D82",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+              },
+              "name": "account_status",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "84EAF9A1-534E-421D-A8CA-6798EFDDDCD5",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+              },
+              "name": "role_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            }
+          ]
+        },
+        {
+          "_id": "60AA6369-639A-4082-A78C-185D79402F38",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "REFILL_REMINDER",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "AFB141CB-7B4F-4655-BA3A-F5A3971CA28A",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+              },
+              "name": "reminder_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "BFCA88D1-8825-4047-A9C6-4766D28721EF",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+              },
+              "name": "user_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "5834804A-17E0-4B87-96A2-B9A4397E3E43",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+              },
+              "name": "reminder_date_time",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            },
+            {
+              "_id": "41EEE668-623D-450E-8D7C-D7566DFEEE84",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+              },
+              "name": "status",
+              "visibility": "public",
+              "type": "VARCHAR"
+            }
+          ]
+        },
+        {
+          "_id": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "INCORRECT_INFORMATION_REPORT",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "F710FCC8-7AC0-4577-B263-74A9CF630D86",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "name": "report_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "190AF2A1-C703-4BCF-8330-47BF81ECC4E6",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "name": "reported_by",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "C1D64A1F-CC2A-40D1-A980-FC83E9FE455A",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "name": "report_type",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "4D8A763E-4B8B-46DA-8411-1563E5ED7F1B",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "name": "description",
+              "visibility": "public",
+              "type": "TEXT"
+            },
+            {
+              "_id": "04EC1803-CC33-4945-81BF-2972B067A8B6",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "name": "status",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "0395A9C3-B14A-44AE-AFAC-EA76A23B4553",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "name": "created_at",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            },
+            {
+              "_id": "2C04EEF1-5EB4-4271-A319-BE2F94331AA8",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "name": "resolution_note",
+              "visibility": "public",
+              "type": "TEXT"
+            }
+          ]
+        },
+        {
+          "_id": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "AUDIT_LOG_ENTRY",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "D556AECB-C71E-448A-8A4F-F64EAD98C30F",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+              },
+              "name": "audit_log_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "B35CCEAB-E43E-4D87-87F1-EED48F64276A",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+              },
+              "name": "user_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "4321A46C-9D0A-4D12-8BA3-45E2F57BC66C",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+              },
+              "name": "timestamp",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            },
+            {
+              "_id": "CC7CBCEF-7AE3-420A-9A72-188684CE41A0",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+              },
+              "name": "action",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "6DEB85E7-15D0-4162-BD79-964893402A8F",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+              },
+              "name": "result",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "B0138919-6821-494C-8A47-49C7847BFC15",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+              },
+              "name": "affected_record",
+              "visibility": "public",
+              "type": "VARCHAR"
+            }
+          ]
+        },
+        {
+          "_id": "98CEC18C-741C-4734-8084-A195FD7CEC88",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "MEDICINE",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "9A0B0BB0-838C-45CF-BE9F-2378C8CD9A49",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "name": "medicine_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "8833ECD5-8081-4B6D-B8AC-7BF803D1EA10",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "name": "medicine_name",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "8B4EF3A8-E525-49E9-8D58-17FB465044F2",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "name": "active_ingredient",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "CF209B9E-5E00-4EA6-9778-55663B2B2F73",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "name": "strength",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "9DD3F6B3-BF0D-4646-9C26-8A55F95BF8F6",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "name": "dosage_form",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "5AC7ABDF-BD08-4745-B81D-0FB94E2FD9D6",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "name": "pack_size",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "36CC1B34-8E14-47B9-9E28-E02851ACD55A",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "name": "manufacturer",
+              "visibility": "public",
+              "type": "VARCHAR"
+            }
+          ]
+        },
+        {
+          "_id": "D001F26A-0607-4494-B510-56EF64BEEB06",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "PHARMACY_AVAILABILITY",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "E5218AE1-9B55-412D-8B32-60D95A251EA6",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+              },
+              "name": "availability_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "B102FFA0-2037-4F8D-A7FD-BBB248B7906B",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+              },
+              "name": "medicine_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "F56C6185-79CB-4D8A-BAF8-7D6ADA7524A4",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+              },
+              "name": "pharmacy_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "7D35A436-75A3-41B7-87D2-DAE023A62031",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+              },
+              "name": "availability_status",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "3981F50A-D3A7-43C5-8406-523280BCD0B7",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+              },
+              "name": "last_updated",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            }
+          ]
+        },
+        {
+          "_id": "491EA047-D34B-4476-A02E-40D8CACC7FD7",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "PHARMACY",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "38527318-9389-40A7-863D-35A3B02EA0A0",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+              },
+              "name": "pharmacy_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "12406D93-0651-4344-B6FC-6E0FD80AA740",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+              },
+              "name": "pharmacy_name",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "5C75D73C-6FF1-42B3-BEAF-060B6EA5E0D1",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+              },
+              "name": "location",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "D1DF9243-3499-4130-B389-866E6BCA950F",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+              },
+              "name": "contact_information",
+              "visibility": "public",
+              "type": "VARCHAR"
+            }
+          ]
+        },
+        {
+          "_id": "DDE54415-98C3-4541-B254-297FB05735AB",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "PRICE",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "FAE7BFDA-6423-429A-BCC5-4BDE6F2C5C52",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+              },
+              "name": "price_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "8B73948E-552C-4613-A145-7187785947DA",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+              },
+              "name": "medicine_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "6F4EAAB1-33B3-4BF8-BE76-CA62DAB79B2E",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+              },
+              "name": "pharmacy_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "057659BE-46C7-4736-82DE-9695856E4BCE",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+              },
+              "name": "amount",
+              "visibility": "public",
+              "type": "DECIMAL"
+            },
+            {
+              "_id": "5780EC34-357F-401F-B708-F2D40657B757",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+              },
+              "name": "currency",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "65FE0FF6-329D-4C6D-9658-2CFD7805C4BD",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+              },
+              "name": "last_updated",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            }
+          ]
+        },
+        {
+          "_id": "1EAE7783-1FC4-4021-8B35-5FE536468702",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "POTENTIAL_MEDICINE_MATCH",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "5AD04ED1-CDED-44EA-8BB3-9B1B55570B97",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+              },
+              "name": "match_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "F612B08B-91F6-4BB0-92CB-D63569EC1670",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+              },
+              "name": "match_status",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "367A3DEF-64C5-400F-B695-87EE556B631A",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+              },
+              "name": "created_at",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            }
+          ]
+        },
+        {
+          "_id": "773D1631-2A50-438B-9FBC-A6246261161A",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "POTENTIAL_MEDICINE_MATCH_MEDICINE",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "9A1A373A-C2D6-4C6B-A3B9-1A7FAF3697B3",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+              },
+              "name": "match_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK, FK"
+            },
+            {
+              "_id": "C48B6DB3-0D08-4E58-A5CE-22D60765BCA1",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+              },
+              "name": "medicine_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK, FK"
+            }
+          ]
+        },
+        {
+          "_id": "5F92625E-1DFA-445E-BD93-0547E7EB611C",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "MEDICINE_COMPARISON",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "A0E35EBD-E97C-40B4-AA52-8599CE52184F",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+              },
+              "name": "comparison_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "329429F0-9EFA-4A52-9C50-CA79BFF461E5",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+              },
+              "name": "comparison_status",
+              "visibility": "public",
+              "type": "VARCHAR"
+            },
+            {
+              "_id": "F7E53C04-4B9A-4669-A889-BAA2F94D8482",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+              },
+              "name": "created_at",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            },
+            {
+              "_id": "A89DC24A-FFB3-42E0-BB04-31CF72F4A3D7",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+              },
+              "name": "verification_date",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            }
+          ]
+        },
+        {
+          "_id": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "MEDICINE_COMPARISON_MEDICINE",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "8BE3E451-9376-477F-B13D-AC82010C4C50",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+              },
+              "name": "comparison_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK, FK"
+            },
+            {
+              "_id": "D257D3CA-318B-4843-9934-502132A890D9",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+              },
+              "name": "medicine_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK, FK"
+            }
+          ]
+        },
+        {
+          "_id": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6",
+          "_type": "UMLClass",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "VERIFICATION_COMMENT",
+          "visibility": "public",
+          "isAbstract": false,
+          "stereotype": "Entity",
+          "ownedElements": [
+            {
+              "_id": "20D5CAD1-9792-4990-966B-B79274770AB5",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+              },
+              "name": "comment_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "PK"
+            },
+            {
+              "_id": "F79EFD3F-1B4F-4EC3-9316-F41568A7B06E",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+              },
+              "name": "comparison_id",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            },
+            {
+              "_id": "B610CADB-79D3-4A5B-ADF5-C3703EC93684",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+              },
+              "name": "comment_text",
+              "visibility": "public",
+              "type": "TEXT"
+            },
+            {
+              "_id": "4536BD0C-266D-4157-8F7F-E0AC08175336",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+              },
+              "name": "created_at",
+              "visibility": "public",
+              "type": "TIMESTAMP"
+            },
+            {
+              "_id": "92A9A16C-9A97-4DDD-87BC-E5568CB3415A",
+              "_type": "UMLAttribute",
+              "_parent": {
+                "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+              },
+              "name": "created_by",
+              "visibility": "public",
+              "type": "INTEGER",
+              "stereotype": "FK"
+            }
+          ]
+        },
+        {
+          "_id": "93565264-17E6-449B-830E-6A64DB98B86D",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "7D0D85CF-D9FB-458C-9A95-7CBB9C9C8D56",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "93565264-17E6-449B-830E-6A64DB98B86D"
+            },
+            "name": "role",
+            "reference": {
+              "$ref": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "57C3B114-F1B5-40DE-9D85-0B290A3D31A5",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "93565264-17E6-449B-830E-6A64DB98B86D"
+            },
+            "name": "users",
+            "reference": {
+              "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "4A95F2F8-8EDC-4160-95C5-BFAC3BF6B639",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "0AD0FC81-0896-4D54-A190-DE03F8AFC372",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "4A95F2F8-8EDC-4160-95C5-BFAC3BF6B639"
+            },
+            "name": "user",
+            "reference": {
+              "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "E8F484E9-E292-463A-A3BB-FB98AA962FCF",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "4A95F2F8-8EDC-4160-95C5-BFAC3BF6B639"
+            },
+            "name": "reminders",
+            "reference": {
+              "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "0D5AE420-3B02-4B85-B4E8-2A1E85CEF40E",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "30DADEB1-D1C9-4DE7-AB93-EBD7C3DE3AD0",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "0D5AE420-3B02-4B85-B4E8-2A1E85CEF40E"
+            },
+            "name": "reportedBy",
+            "reference": {
+              "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "B9B9FDD1-1E59-4792-98BF-3952FEEA1E94",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "0D5AE420-3B02-4B85-B4E8-2A1E85CEF40E"
+            },
+            "name": "reports",
+            "reference": {
+              "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "7C65F9CB-EC6E-4BC3-B3FA-530F29BFA00A",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "4998F87D-7FFB-4B10-BBD0-5BD63E2B4756",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "7C65F9CB-EC6E-4BC3-B3FA-530F29BFA00A"
+            },
+            "name": "actor",
+            "reference": {
+              "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "550DFB9E-0577-4D4E-81C4-EBA45E983B92",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "7C65F9CB-EC6E-4BC3-B3FA-530F29BFA00A"
+            },
+            "name": "auditEntries",
+            "reference": {
+              "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "E2CB3A61-54D3-408D-982B-E9F194EE15BF",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "B9421D4F-6172-4F26-A215-15311921F662",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "E2CB3A61-54D3-408D-982B-E9F194EE15BF"
+            },
+            "name": "createdBy",
+            "reference": {
+              "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "58DFFF96-6393-4BF2-9150-00AA96FF8DA0",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "E2CB3A61-54D3-408D-982B-E9F194EE15BF"
+            },
+            "name": "comments",
+            "reference": {
+              "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "DC141494-F644-48AE-B799-963F2FEDDE35",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "CDBCB1D0-0D24-46C5-B363-7399F744FD9E",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "DC141494-F644-48AE-B799-963F2FEDDE35"
+            },
+            "name": "medicine",
+            "reference": {
+              "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "0855F93A-991C-4ECB-A35C-3109F05C0AAC",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "DC141494-F644-48AE-B799-963F2FEDDE35"
+            },
+            "name": "availabilityRecords",
+            "reference": {
+              "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "ED8FCABA-5B9D-40DA-8689-9DA5AD29A8C9",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "5EDD18E7-5545-46FB-B6F5-42C2D706F159",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "ED8FCABA-5B9D-40DA-8689-9DA5AD29A8C9"
+            },
+            "name": "pharmacy",
+            "reference": {
+              "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "390D4315-D3DE-4061-A4BF-CADCECB08C01",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "ED8FCABA-5B9D-40DA-8689-9DA5AD29A8C9"
+            },
+            "name": "availabilityRecords",
+            "reference": {
+              "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "904C86B1-8814-4D6C-940A-22E9EE4CB2CF",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "9CEB1C23-20B3-495D-8DE2-2BFB04CA20C0",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "904C86B1-8814-4D6C-940A-22E9EE4CB2CF"
+            },
+            "name": "medicine",
+            "reference": {
+              "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "E8318269-8892-46C7-A005-73C1C99AB95E",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "904C86B1-8814-4D6C-940A-22E9EE4CB2CF"
+            },
+            "name": "prices",
+            "reference": {
+              "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "25D216F3-BB8F-4C7F-BECB-318E83FDA03B",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "A02134D2-9C63-41A2-970E-AC15567F607F",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "25D216F3-BB8F-4C7F-BECB-318E83FDA03B"
+            },
+            "name": "pharmacy",
+            "reference": {
+              "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "F3C16033-BAA7-4A6C-9EB9-872660F0E3C2",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "25D216F3-BB8F-4C7F-BECB-318E83FDA03B"
+            },
+            "name": "prices",
+            "reference": {
+              "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "2969322B-A1A6-450F-A37E-D8C5B70226EB",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "1340D26C-4B5C-4379-AF14-8DA3CE375BB4",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "2969322B-A1A6-450F-A37E-D8C5B70226EB"
+            },
+            "name": "match",
+            "reference": {
+              "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "3BEBA8F9-383A-4B3B-B396-A406402B6974",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "2969322B-A1A6-450F-A37E-D8C5B70226EB"
+            },
+            "name": "matchMedicines",
+            "reference": {
+              "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "31F62046-E747-4F69-90E4-95808A0136DB",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "C37CDDC1-6840-474D-9E62-6319C9E2B066",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "31F62046-E747-4F69-90E4-95808A0136DB"
+            },
+            "name": "medicine",
+            "reference": {
+              "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "AB8B07E7-9D98-473E-B063-06984264FF33",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "31F62046-E747-4F69-90E4-95808A0136DB"
+            },
+            "name": "matchEntries",
+            "reference": {
+              "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "9B66609E-1C47-4323-BB51-EA2443D4CBC2",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "AF810389-011C-4523-AD7F-24B56EC8710F",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "9B66609E-1C47-4323-BB51-EA2443D4CBC2"
+            },
+            "name": "comparison",
+            "reference": {
+              "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "1A2AE338-44CB-44CA-AAFD-485A4F5F8931",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "9B66609E-1C47-4323-BB51-EA2443D4CBC2"
+            },
+            "name": "comparisonMedicines",
+            "reference": {
+              "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "2..*"
+          }
+        },
+        {
+          "_id": "EF477A7D-1678-4739-BAE4-66D1D052002F",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "FA8BA38B-3CDD-440E-9C50-CECADED20BFA",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "EF477A7D-1678-4739-BAE4-66D1D052002F"
+            },
+            "name": "medicine",
+            "reference": {
+              "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "38E3C152-865A-48E3-8767-221F98D6D26A",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "EF477A7D-1678-4739-BAE4-66D1D052002F"
+            },
+            "name": "comparisonEntries",
+            "reference": {
+              "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "002D56E4-7BB4-48C9-A986-7970E9A83D3A",
+          "_type": "UMLAssociation",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "",
+          "end1": {
+            "_id": "0385BB57-D3B6-43DE-A6C9-1982C6F34AE6",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "002D56E4-7BB4-48C9-A986-7970E9A83D3A"
+            },
+            "name": "comparison",
+            "reference": {
+              "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+            },
+            "visibility": "public",
+            "navigable": false,
+            "aggregation": "none",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_id": "27EB3625-1AE3-41D5-BDA3-EE16595A5B87",
+            "_type": "UMLAssociationEnd",
+            "_parent": {
+              "$ref": "002D56E4-7BB4-48C9-A986-7970E9A83D3A"
+            },
+            "name": "comments",
+            "reference": {
+              "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+            },
+            "visibility": "public",
+            "navigable": true,
+            "aggregation": "none",
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_id": "F7B69439-5199-4C2E-89F0-0F90C772A196",
+          "_type": "UMLClassDiagram",
+          "_parent": {
+            "$ref": "E0BBA916-817E-4408-94CE-C94A9456CCA2"
+          },
+          "name": "MedAccess Entity-Relationship Diagram (ER-01)",
+          "visible": true,
+          "defaultDiagram": true,
+          "ownedViews": [
+            {
+              "_id": "BD4E261C-905E-48FB-A6BA-8AC55AFE59A6",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198"
+              },
+              "left": 60,
+              "top": 40,
+              "width": 220,
+              "height": 90,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "64099EAF-1343-4F5B-9F69-6039E6DA3296",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "BD4E261C-905E-48FB-A6BA-8AC55AFE59A6"
+                },
+                "model": {
+                  "$ref": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "3DE2D878-5998-40FE-8272-DA8EDE485133",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "BD4E261C-905E-48FB-A6BA-8AC55AFE59A6"
+                },
+                "model": {
+                  "$ref": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198"
+                },
+                "views": [
+                  {
+                    "_id": "96FFF83E-3C69-458E-A172-03CD3CDFA99B",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "3DE2D878-5998-40FE-8272-DA8EDE485133"
+                    },
+                    "model": {
+                      "$ref": "BBD444DF-E48E-46F5-815B-B1A34B17EED9"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "F2000218-BE72-4F50-9748-86C2C832C13A",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "3DE2D878-5998-40FE-8272-DA8EDE485133"
+                    },
+                    "model": {
+                      "$ref": "F2DAC7A0-A913-472F-8174-091E9E840D93"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "520DFFFD-8552-4223-AC6C-78C39F121607",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "BD4E261C-905E-48FB-A6BA-8AC55AFE59A6"
+                },
+                "model": {
+                  "$ref": "8E6F4F61-D5C6-4ECC-8901-32F2CE5CD198"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "C14113DB-9A42-48B1-9C03-32366D4906B5",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+              },
+              "left": 60,
+              "top": 220,
+              "width": 240,
+              "height": 150,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "70D3594F-6F7B-485A-89A3-A7390433AD51",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+                },
+                "model": {
+                  "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "0BC53E99-4EF4-46DA-94D5-8813D249D401",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+                },
+                "model": {
+                  "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+                },
+                "views": [
+                  {
+                    "_id": "186DEE34-39B0-47B7-8763-E8F73BC0D045",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "0BC53E99-4EF4-46DA-94D5-8813D249D401"
+                    },
+                    "model": {
+                      "$ref": "832BAC7B-6E92-4BC4-8CCD-5AB248EE27CA"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "E1C8610F-5010-4ED3-A2C9-3B4730E4BE6D",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "0BC53E99-4EF4-46DA-94D5-8813D249D401"
+                    },
+                    "model": {
+                      "$ref": "AA2B6236-2A09-4E30-914B-DB82537D4533"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "61FB2CF7-CECF-4E8B-86A6-5319BC2264CF",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "0BC53E99-4EF4-46DA-94D5-8813D249D401"
+                    },
+                    "model": {
+                      "$ref": "6DDFB9B1-1E12-4FE7-9AF8-D4BE32F4A04B"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "54E92D95-EF41-4046-8C69-1714958C48A7",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "0BC53E99-4EF4-46DA-94D5-8813D249D401"
+                    },
+                    "model": {
+                      "$ref": "7904EC53-36AF-49AC-84D7-C35657E31D82"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "A5B73779-B662-42DE-ACB2-7349FECF7383",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "0BC53E99-4EF4-46DA-94D5-8813D249D401"
+                    },
+                    "model": {
+                      "$ref": "84EAF9A1-534E-421D-A8CA-6798EFDDDCD5"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "1D45641E-872A-4C5F-B3CF-89BA43D695B1",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+                },
+                "model": {
+                  "$ref": "24C943C9-3853-4D2E-BD93-516A85DF85C6"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "2D02EDDE-7A59-48E8-B590-30F7B247403B",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+              },
+              "left": 60,
+              "top": 480,
+              "width": 230,
+              "height": 130,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "05E18864-5CA0-47E0-A25D-894B731DB9DA",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "2D02EDDE-7A59-48E8-B590-30F7B247403B"
+                },
+                "model": {
+                  "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "263B6C9C-87EE-4861-9C3B-8DA2129E314A",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "2D02EDDE-7A59-48E8-B590-30F7B247403B"
+                },
+                "model": {
+                  "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+                },
+                "views": [
+                  {
+                    "_id": "EC40A088-BB85-420D-B561-677BC408AAC4",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "263B6C9C-87EE-4861-9C3B-8DA2129E314A"
+                    },
+                    "model": {
+                      "$ref": "AFB141CB-7B4F-4655-BA3A-F5A3971CA28A"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "F207FB3C-FF37-4CDA-970F-C9F9A20447BA",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "263B6C9C-87EE-4861-9C3B-8DA2129E314A"
+                    },
+                    "model": {
+                      "$ref": "BFCA88D1-8825-4047-A9C6-4766D28721EF"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "6D118D2A-8149-4F71-AA42-F984909D1AD7",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "263B6C9C-87EE-4861-9C3B-8DA2129E314A"
+                    },
+                    "model": {
+                      "$ref": "5834804A-17E0-4B87-96A2-B9A4397E3E43"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "532E3B3A-B00F-4864-B429-FEB4D967A4D2",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "263B6C9C-87EE-4861-9C3B-8DA2129E314A"
+                    },
+                    "model": {
+                      "$ref": "41EEE668-623D-450E-8D7C-D7566DFEEE84"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "2CB6045C-5746-4603-939C-60A228057E77",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "2D02EDDE-7A59-48E8-B590-30F7B247403B"
+                },
+                "model": {
+                  "$ref": "60AA6369-639A-4082-A78C-185D79402F38"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "388E0F82-CBAD-4A37-8D92-7BE5E4D09213",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+              },
+              "left": 400,
+              "top": 480,
+              "width": 270,
+              "height": 190,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "BA06EF83-D89B-459B-BD9C-DB7E9225BDB8",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "388E0F82-CBAD-4A37-8D92-7BE5E4D09213"
+                },
+                "model": {
+                  "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "388E0F82-CBAD-4A37-8D92-7BE5E4D09213"
+                },
+                "model": {
+                  "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+                },
+                "views": [
+                  {
+                    "_id": "4DD81E74-D2E9-47EB-8FD2-F65BB7BBEEDC",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0"
+                    },
+                    "model": {
+                      "$ref": "F710FCC8-7AC0-4577-B263-74A9CF630D86"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "4BE6C506-6FD6-4E3D-AE09-EF420664E4C6",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0"
+                    },
+                    "model": {
+                      "$ref": "190AF2A1-C703-4BCF-8330-47BF81ECC4E6"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "4FC87BF0-EB3E-4C1F-BC36-79CF48D25C41",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0"
+                    },
+                    "model": {
+                      "$ref": "C1D64A1F-CC2A-40D1-A980-FC83E9FE455A"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "3944D1C5-4685-489B-B687-221D2ADA6858",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0"
+                    },
+                    "model": {
+                      "$ref": "4D8A763E-4B8B-46DA-8411-1563E5ED7F1B"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "FB492274-3F82-42A2-BF71-BBBEFA2C1D4F",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0"
+                    },
+                    "model": {
+                      "$ref": "04EC1803-CC33-4945-81BF-2972B067A8B6"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "DA8C8CE1-675A-4789-B3E4-8DF151EAADAA",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0"
+                    },
+                    "model": {
+                      "$ref": "0395A9C3-B14A-44AE-AFAC-EA76A23B4553"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "3F3BC257-7EE6-4F0E-9F2F-345F17F5910D",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "DDC0DBF1-91DB-40AD-855F-A6257797C0F0"
+                    },
+                    "model": {
+                      "$ref": "2C04EEF1-5EB4-4271-A319-BE2F94331AA8"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "23CC1566-D04D-4C6C-BA00-105FF0005DEC",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "388E0F82-CBAD-4A37-8D92-7BE5E4D09213"
+                },
+                "model": {
+                  "$ref": "F3DEF9B8-7D59-4E5A-BA63-4139A937B315"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "615B1757-F194-4743-8EBB-0B075BEC7E11",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+              },
+              "left": 760,
+              "top": 480,
+              "width": 250,
+              "height": 170,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "8DE9FF04-38D8-40AB-8ECF-CF93E7F616FC",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "615B1757-F194-4743-8EBB-0B075BEC7E11"
+                },
+                "model": {
+                  "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "D3147B87-8BD0-46E9-B1EF-F35ED825A14C",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "615B1757-F194-4743-8EBB-0B075BEC7E11"
+                },
+                "model": {
+                  "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+                },
+                "views": [
+                  {
+                    "_id": "99660C28-0544-4D24-9E00-9349FB3113A1",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "D3147B87-8BD0-46E9-B1EF-F35ED825A14C"
+                    },
+                    "model": {
+                      "$ref": "D556AECB-C71E-448A-8A4F-F64EAD98C30F"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "6B18E42B-B8ED-424C-946A-1C08C21C899E",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "D3147B87-8BD0-46E9-B1EF-F35ED825A14C"
+                    },
+                    "model": {
+                      "$ref": "B35CCEAB-E43E-4D87-87F1-EED48F64276A"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "1E121201-4588-4D14-969D-0133EC671E72",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "D3147B87-8BD0-46E9-B1EF-F35ED825A14C"
+                    },
+                    "model": {
+                      "$ref": "4321A46C-9D0A-4D12-8BA3-45E2F57BC66C"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "F645CE36-FDCC-4624-A4E0-3E665B610837",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "D3147B87-8BD0-46E9-B1EF-F35ED825A14C"
+                    },
+                    "model": {
+                      "$ref": "CC7CBCEF-7AE3-420A-9A72-188684CE41A0"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "B28BDEBB-9C67-4AA6-86BA-CD195C373179",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "D3147B87-8BD0-46E9-B1EF-F35ED825A14C"
+                    },
+                    "model": {
+                      "$ref": "6DEB85E7-15D0-4162-BD79-964893402A8F"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "BBC4E099-41CA-468E-9E57-F0BCA926D5B2",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "D3147B87-8BD0-46E9-B1EF-F35ED825A14C"
+                    },
+                    "model": {
+                      "$ref": "B0138919-6821-494C-8A47-49C7847BFC15"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "8B4DEB71-4D8B-4E50-AE9A-8E6675A72A56",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "615B1757-F194-4743-8EBB-0B075BEC7E11"
+                },
+                "model": {
+                  "$ref": "57F87C10-40A8-4D37-BDBD-A6AC0CD1A9E0"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+              },
+              "left": 60,
+              "top": 780,
+              "width": 240,
+              "height": 190,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "3DDAF13C-AC45-4283-9EA4-C9EF9EA2CA21",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550"
+                },
+                "model": {
+                  "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "30E40CB6-A51C-4A58-939F-0395D1B74258",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550"
+                },
+                "model": {
+                  "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+                },
+                "views": [
+                  {
+                    "_id": "E51D8307-F640-4461-BB61-11AC907C0564",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "30E40CB6-A51C-4A58-939F-0395D1B74258"
+                    },
+                    "model": {
+                      "$ref": "9A0B0BB0-838C-45CF-BE9F-2378C8CD9A49"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "D5C466EA-0882-4161-A1AE-FFDF97B9C151",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "30E40CB6-A51C-4A58-939F-0395D1B74258"
+                    },
+                    "model": {
+                      "$ref": "8833ECD5-8081-4B6D-B8AC-7BF803D1EA10"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "2BFD0226-A904-46BA-B9A3-F16C50B09C55",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "30E40CB6-A51C-4A58-939F-0395D1B74258"
+                    },
+                    "model": {
+                      "$ref": "8B4EF3A8-E525-49E9-8D58-17FB465044F2"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "DCF59123-E240-4D02-86B2-C8987D116B07",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "30E40CB6-A51C-4A58-939F-0395D1B74258"
+                    },
+                    "model": {
+                      "$ref": "CF209B9E-5E00-4EA6-9778-55663B2B2F73"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "4F2C4F22-5531-4001-A6C0-A44180D94C93",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "30E40CB6-A51C-4A58-939F-0395D1B74258"
+                    },
+                    "model": {
+                      "$ref": "9DD3F6B3-BF0D-4646-9C26-8A55F95BF8F6"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "48CB1581-60E0-41DF-998F-24CD24D56FF2",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "30E40CB6-A51C-4A58-939F-0395D1B74258"
+                    },
+                    "model": {
+                      "$ref": "5AC7ABDF-BD08-4745-B81D-0FB94E2FD9D6"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "25E59914-5A1F-41AD-99CD-557D0B75C1E1",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "30E40CB6-A51C-4A58-939F-0395D1B74258"
+                    },
+                    "model": {
+                      "$ref": "36CC1B34-8E14-47B9-9E28-E02851ACD55A"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "A002C61A-CCE5-4901-913D-3D3F992A6432",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550"
+                },
+                "model": {
+                  "$ref": "98CEC18C-741C-4734-8084-A195FD7CEC88"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "E026F208-E269-42A4-9FA5-31A9DFE7EF41",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+              },
+              "left": 420,
+              "top": 780,
+              "width": 250,
+              "height": 150,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "A937D5E4-3FBC-4575-A4FE-3A483AB3D103",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "E026F208-E269-42A4-9FA5-31A9DFE7EF41"
+                },
+                "model": {
+                  "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "CFC6E58D-DB50-4D2A-B676-024561C9E3AB",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "E026F208-E269-42A4-9FA5-31A9DFE7EF41"
+                },
+                "model": {
+                  "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+                },
+                "views": [
+                  {
+                    "_id": "A758B31A-D120-4395-8E94-1A7F09328FC0",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "CFC6E58D-DB50-4D2A-B676-024561C9E3AB"
+                    },
+                    "model": {
+                      "$ref": "E5218AE1-9B55-412D-8B32-60D95A251EA6"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "5FFD8E30-1D6F-402B-B890-156D7E1DBE26",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "CFC6E58D-DB50-4D2A-B676-024561C9E3AB"
+                    },
+                    "model": {
+                      "$ref": "B102FFA0-2037-4F8D-A7FD-BBB248B7906B"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "20EA9E23-DCCB-4E65-A7F0-D6449AB99A83",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "CFC6E58D-DB50-4D2A-B676-024561C9E3AB"
+                    },
+                    "model": {
+                      "$ref": "F56C6185-79CB-4D8A-BAF8-7D6ADA7524A4"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "EB79E9AD-0D66-48C7-A643-3648E1D69219",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "CFC6E58D-DB50-4D2A-B676-024561C9E3AB"
+                    },
+                    "model": {
+                      "$ref": "7D35A436-75A3-41B7-87D2-DAE023A62031"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "2BC81B5D-6879-4D7D-AE34-F96D43163C1F",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "CFC6E58D-DB50-4D2A-B676-024561C9E3AB"
+                    },
+                    "model": {
+                      "$ref": "3981F50A-D3A7-43C5-8406-523280BCD0B7"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "A416E466-0AB1-41A9-A0A6-1E0DF33E23FE",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "E026F208-E269-42A4-9FA5-31A9DFE7EF41"
+                },
+                "model": {
+                  "$ref": "D001F26A-0607-4494-B510-56EF64BEEB06"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "7AABB43E-C663-41EF-8AF6-AB11FBA0D331",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+              },
+              "left": 780,
+              "top": 780,
+              "width": 230,
+              "height": 130,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "12724E5A-8085-4C0C-9A44-96CB37A4C7DA",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "7AABB43E-C663-41EF-8AF6-AB11FBA0D331"
+                },
+                "model": {
+                  "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "712EB3D3-C9AB-48F8-ADF1-386CB588E5DC",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "7AABB43E-C663-41EF-8AF6-AB11FBA0D331"
+                },
+                "model": {
+                  "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+                },
+                "views": [
+                  {
+                    "_id": "83D76DCD-DD32-48A6-9346-DF56ACB26C48",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "712EB3D3-C9AB-48F8-ADF1-386CB588E5DC"
+                    },
+                    "model": {
+                      "$ref": "38527318-9389-40A7-863D-35A3B02EA0A0"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "5C5A4733-519D-430A-B7AA-AE6EA4F68B74",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "712EB3D3-C9AB-48F8-ADF1-386CB588E5DC"
+                    },
+                    "model": {
+                      "$ref": "12406D93-0651-4344-B6FC-6E0FD80AA740"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "426E6201-5F62-44DA-98D6-022DB3285A9E",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "712EB3D3-C9AB-48F8-ADF1-386CB588E5DC"
+                    },
+                    "model": {
+                      "$ref": "5C75D73C-6FF1-42B3-BEAF-060B6EA5E0D1"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "A4B7C946-7B1F-4B80-A7E5-6474A7FF18E1",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "712EB3D3-C9AB-48F8-ADF1-386CB588E5DC"
+                    },
+                    "model": {
+                      "$ref": "D1DF9243-3499-4130-B389-866E6BCA950F"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "0E969EA2-A41B-48A8-BA66-7EDF5E825376",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "7AABB43E-C663-41EF-8AF6-AB11FBA0D331"
+                },
+                "model": {
+                  "$ref": "491EA047-D34B-4476-A02E-40D8CACC7FD7"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "6B60C160-EF0B-4466-9C2D-9657592C0A40",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+              },
+              "left": 420,
+              "top": 1030,
+              "width": 250,
+              "height": 170,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "A0DF143F-28DB-409D-90A7-F7219FA2866F",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "6B60C160-EF0B-4466-9C2D-9657592C0A40"
+                },
+                "model": {
+                  "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "C6D62D9A-BFD5-4188-9105-092D2337D493",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "6B60C160-EF0B-4466-9C2D-9657592C0A40"
+                },
+                "model": {
+                  "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+                },
+                "views": [
+                  {
+                    "_id": "D066A236-C067-444C-95BF-0EF082CA1E87",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C6D62D9A-BFD5-4188-9105-092D2337D493"
+                    },
+                    "model": {
+                      "$ref": "FAE7BFDA-6423-429A-BCC5-4BDE6F2C5C52"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "25CC7600-7E1C-43BB-80CE-01430ABC8502",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C6D62D9A-BFD5-4188-9105-092D2337D493"
+                    },
+                    "model": {
+                      "$ref": "8B73948E-552C-4613-A145-7187785947DA"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "6F0DABFF-1F80-4723-BAB2-762964E92191",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C6D62D9A-BFD5-4188-9105-092D2337D493"
+                    },
+                    "model": {
+                      "$ref": "6F4EAAB1-33B3-4BF8-BE76-CA62DAB79B2E"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "8E736BC0-9BAD-4130-AC67-CD9BEEEB0C2B",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C6D62D9A-BFD5-4188-9105-092D2337D493"
+                    },
+                    "model": {
+                      "$ref": "057659BE-46C7-4736-82DE-9695856E4BCE"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "E65BBFF5-FFD3-4A6D-AB0C-E13557200657",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C6D62D9A-BFD5-4188-9105-092D2337D493"
+                    },
+                    "model": {
+                      "$ref": "5780EC34-357F-401F-B708-F2D40657B757"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "5982F12F-021E-45FB-9C20-B7AD63D1D78A",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C6D62D9A-BFD5-4188-9105-092D2337D493"
+                    },
+                    "model": {
+                      "$ref": "65FE0FF6-329D-4C6D-9658-2CFD7805C4BD"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "9D337EB1-71E6-4BDF-B036-819DCD2ACD9D",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "6B60C160-EF0B-4466-9C2D-9657592C0A40"
+                },
+                "model": {
+                  "$ref": "DDE54415-98C3-4541-B254-297FB05735AB"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "5AB5BA37-4382-4B2E-B922-C8A682139A1B",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+              },
+              "left": 60,
+              "top": 1330,
+              "width": 230,
+              "height": 120,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "90A4DE7E-029A-4695-B0E2-C828CBC0BB03",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "5AB5BA37-4382-4B2E-B922-C8A682139A1B"
+                },
+                "model": {
+                  "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "255A7E6E-4BBE-4508-8E72-4B37E031EC9F",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "5AB5BA37-4382-4B2E-B922-C8A682139A1B"
+                },
+                "model": {
+                  "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+                },
+                "views": [
+                  {
+                    "_id": "FECE32A4-6728-4C91-88B9-A1E18B3FF52A",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "255A7E6E-4BBE-4508-8E72-4B37E031EC9F"
+                    },
+                    "model": {
+                      "$ref": "5AD04ED1-CDED-44EA-8BB3-9B1B55570B97"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "83E9A121-36E7-4EE3-805B-79383DB4968D",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "255A7E6E-4BBE-4508-8E72-4B37E031EC9F"
+                    },
+                    "model": {
+                      "$ref": "F612B08B-91F6-4BB0-92CB-D63569EC1670"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "AAA6EBF7-DBE8-4D66-8AC5-3410EA7F52C8",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "255A7E6E-4BBE-4508-8E72-4B37E031EC9F"
+                    },
+                    "model": {
+                      "$ref": "367A3DEF-64C5-400F-B695-87EE556B631A"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "32DBDF60-D1A7-470C-9CB0-B8B836239275",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "5AB5BA37-4382-4B2E-B922-C8A682139A1B"
+                },
+                "model": {
+                  "$ref": "1EAE7783-1FC4-4021-8B35-5FE536468702"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "AFF09E59-2377-4CC9-8EB8-51C776A247C9",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+              },
+              "left": 420,
+              "top": 1330,
+              "width": 260,
+              "height": 100,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "D3F6AA79-60CB-4F89-9261-E5FA7ACF9914",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "AFF09E59-2377-4CC9-8EB8-51C776A247C9"
+                },
+                "model": {
+                  "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "C008760D-7543-436F-9EC3-C8EA70B8002D",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "AFF09E59-2377-4CC9-8EB8-51C776A247C9"
+                },
+                "model": {
+                  "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+                },
+                "views": [
+                  {
+                    "_id": "EABAE9CF-68B8-47F0-9845-AE62038D4DD4",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C008760D-7543-436F-9EC3-C8EA70B8002D"
+                    },
+                    "model": {
+                      "$ref": "9A1A373A-C2D6-4C6B-A3B9-1A7FAF3697B3"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "087A3109-2D90-4EE3-B7CD-9E4E780B3C91",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "C008760D-7543-436F-9EC3-C8EA70B8002D"
+                    },
+                    "model": {
+                      "$ref": "C48B6DB3-0D08-4E58-A5CE-22D60765BCA1"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "53DB6BB6-01B2-4ECE-8882-85F2B45C5035",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "AFF09E59-2377-4CC9-8EB8-51C776A247C9"
+                },
+                "model": {
+                  "$ref": "773D1631-2A50-438B-9FBC-A6246261161A"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "7D09D329-51BA-4882-8899-7A311249B5E7",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+              },
+              "left": 60,
+              "top": 1550,
+              "width": 230,
+              "height": 140,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "16A6EC39-70F6-47BD-8335-738088CB6E7A",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "7D09D329-51BA-4882-8899-7A311249B5E7"
+                },
+                "model": {
+                  "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "682FF625-3616-4C1A-B405-FAE216574E06",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "7D09D329-51BA-4882-8899-7A311249B5E7"
+                },
+                "model": {
+                  "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+                },
+                "views": [
+                  {
+                    "_id": "92E64AA9-3C3E-4F9E-B986-29226AC74047",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "682FF625-3616-4C1A-B405-FAE216574E06"
+                    },
+                    "model": {
+                      "$ref": "A0E35EBD-E97C-40B4-AA52-8599CE52184F"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "8001ADBB-2C0A-4F16-8414-41200D0F2BD9",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "682FF625-3616-4C1A-B405-FAE216574E06"
+                    },
+                    "model": {
+                      "$ref": "329429F0-9EFA-4A52-9C50-CA79BFF461E5"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "B938511E-7181-49A4-86FA-04A076F3940E",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "682FF625-3616-4C1A-B405-FAE216574E06"
+                    },
+                    "model": {
+                      "$ref": "F7E53C04-4B9A-4669-A889-BAA2F94D8482"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "CB6A5D90-F651-4818-9F40-8D1B73F462E9",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "682FF625-3616-4C1A-B405-FAE216574E06"
+                    },
+                    "model": {
+                      "$ref": "A89DC24A-FFB3-42E0-BB04-31CF72F4A3D7"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "F6CCCA57-2DAD-41F6-954F-0B1317E502D2",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "7D09D329-51BA-4882-8899-7A311249B5E7"
+                },
+                "model": {
+                  "$ref": "5F92625E-1DFA-445E-BD93-0547E7EB611C"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "AF4855C9-4A6E-4FCD-ABAD-F0B084D9AC5A",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+              },
+              "left": 420,
+              "top": 1550,
+              "width": 270,
+              "height": 100,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "C87DDEC9-78F4-496F-9639-0540F883FDEC",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "AF4855C9-4A6E-4FCD-ABAD-F0B084D9AC5A"
+                },
+                "model": {
+                  "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "3FA20E44-7905-4A29-8399-29E38357E8D4",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "AF4855C9-4A6E-4FCD-ABAD-F0B084D9AC5A"
+                },
+                "model": {
+                  "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+                },
+                "views": [
+                  {
+                    "_id": "AE02860A-72D7-4533-81A0-C9A3B2F1D1CB",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "3FA20E44-7905-4A29-8399-29E38357E8D4"
+                    },
+                    "model": {
+                      "$ref": "8BE3E451-9376-477F-B13D-AC82010C4C50"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "D8199E62-D996-47BE-B04F-E7DB6E54D607",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "3FA20E44-7905-4A29-8399-29E38357E8D4"
+                    },
+                    "model": {
+                      "$ref": "D257D3CA-318B-4843-9934-502132A890D9"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "351503F3-8866-4C21-876A-AAD40E23E9E1",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "AF4855C9-4A6E-4FCD-ABAD-F0B084D9AC5A"
+                },
+                "model": {
+                  "$ref": "86AA8204-D9F1-42D7-A7E4-7E4E5756CFCB"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "E86A88B8-C176-4D08-8295-AB09561F1DEA",
+              "_type": "UMLClassView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+              },
+              "left": 800,
+              "top": 1730,
+              "width": 250,
+              "height": 160,
+              "autoResize": false,
+              "showVisibility": true,
+              "showNamespace": false,
+              "showProperty": true,
+              "showType": true,
+              "showOperationSignature": false,
+              "suppressAttributes": false,
+              "suppressOperations": true,
+              "lineColor": "#000000",
+              "fillColor": "#FFFACD",
+              "fontColor": "#000000",
+              "nameCompartment": {
+                "_id": "089679C3-3B8A-4663-B0A8-B4787E4A4839",
+                "_type": "UMLNameCompartmentView",
+                "_parent": {
+                  "$ref": "E86A88B8-C176-4D08-8295-AB09561F1DEA"
+                },
+                "model": {
+                  "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+                }
+              },
+              "attributeCompartment": {
+                "_id": "998B0D9E-2163-4C3E-84E3-84D05E60F693",
+                "_type": "UMLAttributeCompartmentView",
+                "_parent": {
+                  "$ref": "E86A88B8-C176-4D08-8295-AB09561F1DEA"
+                },
+                "model": {
+                  "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+                },
+                "views": [
+                  {
+                    "_id": "BC0FD6DA-8C7E-4B16-82BF-E59303C9C012",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "998B0D9E-2163-4C3E-84E3-84D05E60F693"
+                    },
+                    "model": {
+                      "$ref": "20D5CAD1-9792-4990-966B-B79274770AB5"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "DB189213-301E-4951-967A-10FBE5D0D950",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "998B0D9E-2163-4C3E-84E3-84D05E60F693"
+                    },
+                    "model": {
+                      "$ref": "F79EFD3F-1B4F-4EC3-9316-F41568A7B06E"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "701AFDF8-82DF-405E-B97E-E5769E39390C",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "998B0D9E-2163-4C3E-84E3-84D05E60F693"
+                    },
+                    "model": {
+                      "$ref": "B610CADB-79D3-4A5B-ADF5-C3703EC93684"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "B7EFF2EE-7598-4965-BCCD-57694C1467E1",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "998B0D9E-2163-4C3E-84E3-84D05E60F693"
+                    },
+                    "model": {
+                      "$ref": "4536BD0C-266D-4157-8F7F-E0AC08175336"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  },
+                  {
+                    "_id": "7679EE44-626E-4286-B642-CD47E6AE3EA2",
+                    "_type": "UMLAttributeView",
+                    "_parent": {
+                      "$ref": "998B0D9E-2163-4C3E-84E3-84D05E60F693"
+                    },
+                    "model": {
+                      "$ref": "92A9A16C-9A97-4DDD-87BC-E5568CB3415A"
+                    },
+                    "visible": true,
+                    "lineColor": "#000000",
+                    "fillColor": "#FFFFFF",
+                    "fontColor": "#000000"
+                  }
+                ]
+              },
+              "operationCompartment": {
+                "_id": "A800B34A-85BF-4FD6-A316-CCF76975AC53",
+                "_type": "UMLOperationCompartmentView",
+                "_parent": {
+                  "$ref": "E86A88B8-C176-4D08-8295-AB09561F1DEA"
+                },
+                "model": {
+                  "$ref": "F27BE3D0-05E3-46AF-AD33-BC42974A45C6"
+                },
+                "views": []
+              }
+            },
+            {
+              "_id": "A04BABE1-74FE-4B69-8BB9-B5E5C5DFE34A",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "93565264-17E6-449B-830E-6A64DB98B86D"
+              },
+              "tail": {
+                "$ref": "BD4E261C-905E-48FB-A6BA-8AC55AFE59A6"
+              },
+              "head": {
+                "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+              },
+              "lineStyle": 1,
+              "points": "170:85;180:295",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "23A7D04D-3993-45B4-8601-13FBC4A448F2",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "A04BABE1-74FE-4B69-8BB9-B5E5C5DFE34A"
+                },
+                "model": {
+                  "$ref": "7D0D85CF-D9FB-458C-9A95-7CBB9C9C8D56"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "589FDCA0-6E88-403C-AB1F-AB93F9E1F14B",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "A04BABE1-74FE-4B69-8BB9-B5E5C5DFE34A"
+                },
+                "model": {
+                  "$ref": "57C3B114-F1B5-40DE-9D85-0B290A3D31A5"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "B3171666-A778-4293-AB83-43F59AB47E2B",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "4A95F2F8-8EDC-4160-95C5-BFAC3BF6B639"
+              },
+              "tail": {
+                "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+              },
+              "head": {
+                "$ref": "2D02EDDE-7A59-48E8-B590-30F7B247403B"
+              },
+              "lineStyle": 1,
+              "points": "180:295;175:545",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "269C6450-56B3-486B-89F4-3D5BDE1BF25C",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "B3171666-A778-4293-AB83-43F59AB47E2B"
+                },
+                "model": {
+                  "$ref": "0AD0FC81-0896-4D54-A190-DE03F8AFC372"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "CA9E49BA-2049-414E-BC18-AFCDCF4BFF66",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "B3171666-A778-4293-AB83-43F59AB47E2B"
+                },
+                "model": {
+                  "$ref": "E8F484E9-E292-463A-A3BB-FB98AA962FCF"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "5ED80145-199D-4E64-8AC7-7850FC4C5336",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "0D5AE420-3B02-4B85-B4E8-2A1E85CEF40E"
+              },
+              "tail": {
+                "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+              },
+              "head": {
+                "$ref": "388E0F82-CBAD-4A37-8D92-7BE5E4D09213"
+              },
+              "lineStyle": 1,
+              "points": "180:295;535:575",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "6F8F2EF3-C4F7-4792-87EC-1CDAE8362E6C",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "5ED80145-199D-4E64-8AC7-7850FC4C5336"
+                },
+                "model": {
+                  "$ref": "30DADEB1-D1C9-4DE7-AB93-EBD7C3DE3AD0"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "FF622C9C-C622-4DCA-90B0-E491A07EB0FB",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "5ED80145-199D-4E64-8AC7-7850FC4C5336"
+                },
+                "model": {
+                  "$ref": "B9B9FDD1-1E59-4792-98BF-3952FEEA1E94"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "C34CEE44-54E0-46E3-A465-261AA8C10554",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "7C65F9CB-EC6E-4BC3-B3FA-530F29BFA00A"
+              },
+              "tail": {
+                "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+              },
+              "head": {
+                "$ref": "615B1757-F194-4743-8EBB-0B075BEC7E11"
+              },
+              "lineStyle": 1,
+              "points": "180:295;885:565",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "94781D50-EF7D-43CA-9E15-E5A17423EADD",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "C34CEE44-54E0-46E3-A465-261AA8C10554"
+                },
+                "model": {
+                  "$ref": "4998F87D-7FFB-4B10-BBD0-5BD63E2B4756"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "6A849EDF-37F0-4BC7-AA50-CB981F09C42E",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "C34CEE44-54E0-46E3-A465-261AA8C10554"
+                },
+                "model": {
+                  "$ref": "550DFB9E-0577-4D4E-81C4-EBA45E983B92"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "95B880D6-C3C3-469B-BC99-A3FAEBA45A28",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "E2CB3A61-54D3-408D-982B-E9F194EE15BF"
+              },
+              "tail": {
+                "$ref": "C14113DB-9A42-48B1-9C03-32366D4906B5"
+              },
+              "head": {
+                "$ref": "E86A88B8-C176-4D08-8295-AB09561F1DEA"
+              },
+              "lineStyle": 1,
+              "points": "180:295;925:1810",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "3FACA891-A8D9-4218-9229-86E6BF1A45E2",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "95B880D6-C3C3-469B-BC99-A3FAEBA45A28"
+                },
+                "model": {
+                  "$ref": "B9421D4F-6172-4F26-A215-15311921F662"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "3EAEECCF-2622-441E-8605-EB6CA901CE56",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "95B880D6-C3C3-469B-BC99-A3FAEBA45A28"
+                },
+                "model": {
+                  "$ref": "58DFFF96-6393-4BF2-9150-00AA96FF8DA0"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "4B5C4326-33CB-4D0C-93F8-59BB58010BFA",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "DC141494-F644-48AE-B799-963F2FEDDE35"
+              },
+              "tail": {
+                "$ref": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550"
+              },
+              "head": {
+                "$ref": "E026F208-E269-42A4-9FA5-31A9DFE7EF41"
+              },
+              "lineStyle": 1,
+              "points": "180:875;545:855",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "CA338DF5-EF91-4336-8A73-B5DC5232FB6D",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "4B5C4326-33CB-4D0C-93F8-59BB58010BFA"
+                },
+                "model": {
+                  "$ref": "CDBCB1D0-0D24-46C5-B363-7399F744FD9E"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "BAFCC7CB-2E88-4780-936E-858221D46EE3",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "4B5C4326-33CB-4D0C-93F8-59BB58010BFA"
+                },
+                "model": {
+                  "$ref": "0855F93A-991C-4ECB-A35C-3109F05C0AAC"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "7BAD01B0-7569-43DC-A69B-43B8F36F788E",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "ED8FCABA-5B9D-40DA-8689-9DA5AD29A8C9"
+              },
+              "tail": {
+                "$ref": "7AABB43E-C663-41EF-8AF6-AB11FBA0D331"
+              },
+              "head": {
+                "$ref": "E026F208-E269-42A4-9FA5-31A9DFE7EF41"
+              },
+              "lineStyle": 1,
+              "points": "895:845;545:855",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "922C4637-C496-4C38-8322-D9D60ADE65A7",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "7BAD01B0-7569-43DC-A69B-43B8F36F788E"
+                },
+                "model": {
+                  "$ref": "5EDD18E7-5545-46FB-B6F5-42C2D706F159"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "DAAA6BB3-0256-43C3-AD87-F336D61CCCA1",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "7BAD01B0-7569-43DC-A69B-43B8F36F788E"
+                },
+                "model": {
+                  "$ref": "390D4315-D3DE-4061-A4BF-CADCECB08C01"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "7F462293-3848-46CF-8776-A42D9575782C",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "904C86B1-8814-4D6C-940A-22E9EE4CB2CF"
+              },
+              "tail": {
+                "$ref": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550"
+              },
+              "head": {
+                "$ref": "6B60C160-EF0B-4466-9C2D-9657592C0A40"
+              },
+              "lineStyle": 1,
+              "points": "180:875;545:1115",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "12C8F40E-AF33-4686-A1B4-33BDC0CA1418",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "7F462293-3848-46CF-8776-A42D9575782C"
+                },
+                "model": {
+                  "$ref": "9CEB1C23-20B3-495D-8DE2-2BFB04CA20C0"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "19505AE2-F79D-4B2F-984A-B458D87ED837",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "7F462293-3848-46CF-8776-A42D9575782C"
+                },
+                "model": {
+                  "$ref": "E8318269-8892-46C7-A005-73C1C99AB95E"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "B0025166-DB3C-4D6B-9C5C-B53297842BFD",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "25D216F3-BB8F-4C7F-BECB-318E83FDA03B"
+              },
+              "tail": {
+                "$ref": "7AABB43E-C663-41EF-8AF6-AB11FBA0D331"
+              },
+              "head": {
+                "$ref": "6B60C160-EF0B-4466-9C2D-9657592C0A40"
+              },
+              "lineStyle": 1,
+              "points": "895:845;545:1115",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "CAAD4A8A-DBCD-49D5-B395-5B2195FB5B25",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "B0025166-DB3C-4D6B-9C5C-B53297842BFD"
+                },
+                "model": {
+                  "$ref": "A02134D2-9C63-41A2-970E-AC15567F607F"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "553F2647-6A69-4D68-9CEF-5B256933B3F8",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "B0025166-DB3C-4D6B-9C5C-B53297842BFD"
+                },
+                "model": {
+                  "$ref": "F3C16033-BAA7-4A6C-9EB9-872660F0E3C2"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "2973C4DE-D8A1-4139-96AD-5AA4B3F1CFDF",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "2969322B-A1A6-450F-A37E-D8C5B70226EB"
+              },
+              "tail": {
+                "$ref": "5AB5BA37-4382-4B2E-B922-C8A682139A1B"
+              },
+              "head": {
+                "$ref": "AFF09E59-2377-4CC9-8EB8-51C776A247C9"
+              },
+              "lineStyle": 1,
+              "points": "175:1390;550:1380",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "AF96CB99-611D-454E-A810-E6816CC1FBD5",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "2973C4DE-D8A1-4139-96AD-5AA4B3F1CFDF"
+                },
+                "model": {
+                  "$ref": "1340D26C-4B5C-4379-AF14-8DA3CE375BB4"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "C2380B47-9F1F-4B27-ABD2-638C25F6D8EF",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "2973C4DE-D8A1-4139-96AD-5AA4B3F1CFDF"
+                },
+                "model": {
+                  "$ref": "3BEBA8F9-383A-4B3B-B396-A406402B6974"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "41CF550F-88C7-4327-8ADB-70DBA202A0BB",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "31F62046-E747-4F69-90E4-95808A0136DB"
+              },
+              "tail": {
+                "$ref": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550"
+              },
+              "head": {
+                "$ref": "AFF09E59-2377-4CC9-8EB8-51C776A247C9"
+              },
+              "lineStyle": 1,
+              "points": "180:875;550:1380",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "BBE35C1B-9003-40A7-8B90-EA1915208714",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "41CF550F-88C7-4327-8ADB-70DBA202A0BB"
+                },
+                "model": {
+                  "$ref": "C37CDDC1-6840-474D-9E62-6319C9E2B066"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "D48A6198-2720-40AB-8BF8-3760BA14B02A",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "41CF550F-88C7-4327-8ADB-70DBA202A0BB"
+                },
+                "model": {
+                  "$ref": "AB8B07E7-9D98-473E-B063-06984264FF33"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "9CDE4CD5-F7BD-481B-BEBB-2B3952091FD0",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "9B66609E-1C47-4323-BB51-EA2443D4CBC2"
+              },
+              "tail": {
+                "$ref": "7D09D329-51BA-4882-8899-7A311249B5E7"
+              },
+              "head": {
+                "$ref": "AF4855C9-4A6E-4FCD-ABAD-F0B084D9AC5A"
+              },
+              "lineStyle": 1,
+              "points": "175:1620;555:1600",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "F7189F5A-110E-4E32-9D54-6226AAFDA68F",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "9CDE4CD5-F7BD-481B-BEBB-2B3952091FD0"
+                },
+                "model": {
+                  "$ref": "AF810389-011C-4523-AD7F-24B56EC8710F"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "E7098BAA-B2B6-4098-8DB7-6A17BEBE71A9",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "9CDE4CD5-F7BD-481B-BEBB-2B3952091FD0"
+                },
+                "model": {
+                  "$ref": "1A2AE338-44CB-44CA-AAFD-485A4F5F8931"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "D5FEACA0-E508-4BCD-93E4-1B1E1302CF3D",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "EF477A7D-1678-4739-BAE4-66D1D052002F"
+              },
+              "tail": {
+                "$ref": "74A312D6-C2CF-49BA-A9DC-598DAFD0E550"
+              },
+              "head": {
+                "$ref": "AF4855C9-4A6E-4FCD-ABAD-F0B084D9AC5A"
+              },
+              "lineStyle": 1,
+              "points": "180:875;555:1600",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "63B103E4-4C4E-4080-AAC3-E06E03DE86A4",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "D5FEACA0-E508-4BCD-93E4-1B1E1302CF3D"
+                },
+                "model": {
+                  "$ref": "FA8BA38B-3CDD-440E-9C50-CECADED20BFA"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "3A0BEFBC-7B7A-40BB-8C2F-69523BBE72DB",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "D5FEACA0-E508-4BCD-93E4-1B1E1302CF3D"
+                },
+                "model": {
+                  "$ref": "38E3C152-865A-48E3-8767-221F98D6D26A"
+                },
+                "visible": true
+              }
+            },
+            {
+              "_id": "75644333-C84E-498C-9C63-1FAA255E5F02",
+              "_type": "UMLAssociationView",
+              "_parent": {
+                "$ref": "F7B69439-5199-4C2E-89F0-0F90C772A196"
+              },
+              "model": {
+                "$ref": "002D56E4-7BB4-48C9-A986-7970E9A83D3A"
+              },
+              "tail": {
+                "$ref": "7D09D329-51BA-4882-8899-7A311249B5E7"
+              },
+              "head": {
+                "$ref": "E86A88B8-C176-4D08-8295-AB09561F1DEA"
+              },
+              "lineStyle": 1,
+              "points": "175:1620;925:1810",
+              "lineColor": "#000000",
+              "fontColor": "#000000",
+              "tailEndStyle": 0,
+              "headEndStyle": 0,
+              "showMultiplicity": true,
+              "showName": false,
+              "tailView": {
+                "_id": "7B5575B2-C7D4-46F8-A453-F97350BAC6BA",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "75644333-C84E-498C-9C63-1FAA255E5F02"
+                },
+                "model": {
+                  "$ref": "0385BB57-D3B6-43DE-A6C9-1982C6F34AE6"
+                },
+                "visible": true
+              },
+              "headView": {
+                "_id": "F64F6FAE-3513-4C26-98F6-19C958DC1D28",
+                "_type": "UMLAssociationEndView",
+                "_parent": {
+                  "$ref": "75644333-C84E-498C-9C63-1FAA255E5F02"
+                },
+                "model": {
+                  "$ref": "27EB3625-1AE3-41D5-BDA3-EE16595A5B87"
+                },
+                "visible": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
