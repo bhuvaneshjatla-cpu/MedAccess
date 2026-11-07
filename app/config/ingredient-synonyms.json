@@ -1,0 +1,27 @@
+{
+  "version": "2026-10-20-draft-1",
+  "status": "DRAFT - search convenience only, not yet reviewed by a pharmacist. Edit this file and restart the server.",
+  "description": "Names for the same substance that differ between Indian (BAN/INN) usage and the CDCI catalogue (US names). A search for the ingredient or a single-word medicine name under any one name also finds the others. This changes what a search finds, never what a product is: matching, verification and the restricted-medicine list are unaffected.",
+  "groups": [
+    ["paracetamol", "acetaminophen"],
+    ["salbutamol", "albuterol"],
+    ["adrenaline", "epinephrine"],
+    ["noradrenaline", "norepinephrine"],
+    ["lignocaine", "lidocaine"],
+    ["frusemide", "furosemide"],
+    ["glibenclamide", "glyburide"],
+    ["rifampicin", "rifampin"],
+    ["amoxycillin", "amoxicillin"],
+    ["cephalexin", "cefalexin"],
+    ["chlorpheniramine", "chlorphenamine"],
+    ["dicyclomine", "dicycloverine"],
+    ["thyroxine", "levothyroxine"],
+    ["vitamin c", "ascorbic acid"],
+    ["vitamin d3", "cholecalciferol"],
+    ["vitamin b1", "thiamine"],
+    ["vitamin b6", "pyridoxine"],
+    ["vitamin k", "phytomenadione"],
+    ["isoprenaline", "isoproterenol"],
+    ["benzhexol", "trihexyphenidyl"]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "medaccess",
+  "version": "0.1.0",
+  "description": "MedAccess prototype - pharmacist-supervised medicine availability, price comparison and information assistant",
+  "private": true,
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server/index.js",
+    "reset-db": "node server/reset.js",
+    "test": "node --test test/api.test.js test/reference.test.js test/parse.test.js test/migration.test.js test/overlay.test.js test/restricted.test.js test/filters.test.js test/import.test.js test/routes.test.js test/browser.test.js test/a11y.test.js"
+  }
+}

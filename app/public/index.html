@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedAccess</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+  <header id="top" class="top" hidden>
+    <div class="top-inner">
+      <a class="brand" href="#/search"><span class="logo" aria-hidden="true">+</span> MedAccess</a>
+      <nav id="nav" aria-label="Main"></nav>
+      <div class="who"><span id="whoami"></span> <button id="logout" class="btn small ghost" type="button">Log out</button></div>
+    </div>
+  </header>
+  <div id="banner" class="banner" hidden>
+    <strong>Information only.</strong> MedAccess does not diagnose, prescribe, change doses or recommend substitution. Prototype data is synthetic and not live pharmacy availability.
+  </div>
+  <main id="view" tabindex="-1"></main>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

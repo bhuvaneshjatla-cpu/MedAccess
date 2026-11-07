@@ -1,0 +1,8 @@
+node_modules/
+app/data/
+*.db-shm
+*.db-wal
+paper/*.zip
+.DS_Store
+Thumbs.db
+paper/MedAccess_IEEE_paper.pdf
